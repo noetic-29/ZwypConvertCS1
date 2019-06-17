@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZwypConvertCS1.iOS", "ZwypC
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZwypConvertCS1", "ZwypConvertCS1\ZwypConvertCS1\ZwypConvertCS1.csproj", "{91DEDEA8-2233-41C2-BA13-839CDCD17BB1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KonVertObjs", "..\KonVertObjs\KonVertObjs\KonVertObjs.csproj", "{86C44243-A986-4047-8AAC-6EC799144406}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -168,6 +170,30 @@ Global
 		{91DEDEA8-2233-41C2-BA13-839CDCD17BB1}.Release|x86.ActiveCfg = Release|Any CPU
 		{91DEDEA8-2233-41C2-BA13-839CDCD17BB1}.Release|x86.Build.0 = Release|Any CPU
 		{91DEDEA8-2233-41C2-BA13-839CDCD17BB1}.Release|x86.Deploy.0 = Release|Any CPU
+		{86C44243-A986-4047-8AAC-6EC799144406}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86C44243-A986-4047-8AAC-6EC799144406}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86C44243-A986-4047-8AAC-6EC799144406}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{86C44243-A986-4047-8AAC-6EC799144406}.Debug|ARM.Build.0 = Debug|Any CPU
+		{86C44243-A986-4047-8AAC-6EC799144406}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{86C44243-A986-4047-8AAC-6EC799144406}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{86C44243-A986-4047-8AAC-6EC799144406}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{86C44243-A986-4047-8AAC-6EC799144406}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{86C44243-A986-4047-8AAC-6EC799144406}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{86C44243-A986-4047-8AAC-6EC799144406}.Debug|x64.Build.0 = Debug|Any CPU
+		{86C44243-A986-4047-8AAC-6EC799144406}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{86C44243-A986-4047-8AAC-6EC799144406}.Debug|x86.Build.0 = Debug|Any CPU
+		{86C44243-A986-4047-8AAC-6EC799144406}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86C44243-A986-4047-8AAC-6EC799144406}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86C44243-A986-4047-8AAC-6EC799144406}.Release|ARM.ActiveCfg = Release|Any CPU
+		{86C44243-A986-4047-8AAC-6EC799144406}.Release|ARM.Build.0 = Release|Any CPU
+		{86C44243-A986-4047-8AAC-6EC799144406}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{86C44243-A986-4047-8AAC-6EC799144406}.Release|iPhone.Build.0 = Release|Any CPU
+		{86C44243-A986-4047-8AAC-6EC799144406}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{86C44243-A986-4047-8AAC-6EC799144406}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{86C44243-A986-4047-8AAC-6EC799144406}.Release|x64.ActiveCfg = Release|Any CPU
+		{86C44243-A986-4047-8AAC-6EC799144406}.Release|x64.Build.0 = Release|Any CPU
+		{86C44243-A986-4047-8AAC-6EC799144406}.Release|x86.ActiveCfg = Release|Any CPU
+		{86C44243-A986-4047-8AAC-6EC799144406}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

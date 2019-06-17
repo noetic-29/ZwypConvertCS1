@@ -15,16 +15,19 @@
     <None Remove="images\currsel600.png" />
     <None Remove="images\dist600.png" />
     <None Remove="images\distsel600.png" />
+    <None Remove="images\left2right.png" />
     <None Remove="images\length600.png" />
     <None Remove="images\lengthsel600.png" />
     <None Remove="images\load600.png" />
     <None Remove="images\loadsel600.png" />
     <None Remove="images\Pressure600.png" />
     <None Remove="images\pressuresel600.png" />
+    <None Remove="images\right2left.png" />
     <None Remove="images\space600.png" />
     <None Remove="images\spacesel600.png" />
     <None Remove="images\surface600.png" />
     <None Remove="images\surfacesel600.png" />
+    <None Remove="images\swypconverttraveler512.png" />
     <None Remove="images\temp600.png" />
     <None Remove="images\tempsel600.png" />
     <None Remove="images\time600.png" />
@@ -49,6 +52,9 @@
     <EmbeddedResource Include="images\distsel600.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="images\left2right.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="images\length600.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -67,6 +73,9 @@
     <EmbeddedResource Include="images\pressuresel600.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="images\right2left.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="images\space600.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -77,6 +86,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="images\surfacesel600.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="images\swypconverttraveler512.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="images\temp600.png">
@@ -115,8 +127,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="KonVertObjs">
-      <HintPath>..\..\..\KonVertObjs\KonVertObjs\obj\Debug\KonVertObjs.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\..\..\KonVertObjs\KonVertObjs\KonVertObjs.csproj" />
   </ItemGroup>
 </Project>

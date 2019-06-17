@@ -36,7 +36,25 @@ namespace ZwypConvertCS1
                 {
                     string result = reader.ReadToEnd();
                     ZwCX.TheSet = JsonConvert.DeserializeObject<KonVertSet>(result, buildSetting());
+                    ZwCX.TheSet.fixReferences();
+#if EDREM
+                    // Now must get all internal back pointers set
+                    foreach (KonVersionGroup aKVG in ZwCX.TheSet.KonVersionGroups)
+                    {
+                        aKVG.theSet = ZwCX.TheSet;
+                        aKVG.fixReferences();
+                        foreach(KonVertUnit aKVU in aKVG.konVertUnits)
+                        {
+                            aKVU.theSet = ZwCX.TheSet;
+                            aKVU.fixReferences(aKVG.myVersionGroupID);
+                        }
+                    }
+#endif
                 }
+
+                // will also need to read User specific data
+
+
                 return true;
             }
             catch (JsonException jExp)
@@ -108,6 +126,24 @@ namespace ZwypConvertCS1
         public string conversionName { get; set; }
 
         public KonVersionGroup conversionGroup { get; set; }
+    }
+
+    public class ZwKonversionButton : Button
+    {
+        private KonVersion _btnKonVersion = null;
+        public KonVersion btnKonVersion {
+            get {
+                return _btnKonVersion;
+            }
+            set {
+                if (value != null)
+                {
+                    _btnKonVersion = value;
+                    Text = _btnKonVersion.ToString();
+                }
+            }
+        }
+
     }
 
 }
