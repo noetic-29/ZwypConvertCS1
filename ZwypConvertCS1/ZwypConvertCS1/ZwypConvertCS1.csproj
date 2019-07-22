@@ -122,11 +122,13 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
-    <PackageReference Include="Xamarin.Forms" Version="4.0.0.497661" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
+    <PackageReference Include="Xamarin.Forms" Version="4.1.0.581479" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.2.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\KonVertObjs\KonVertObjs\KonVertObjs.csproj" />
+    <Reference Include="KonVertObjs">
+      <HintPath>..\..\..\KonVertObjs\KonVertObjs\obj\Debug\KonVertObjs.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>

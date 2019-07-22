@@ -188,7 +188,7 @@ namespace ZwypConvertCS1
 
 #region WorkSpace display objects
     // fields for work space
-    public static Picker unitLeftPicker = new Picker
+        public static Picker unitLeftPicker = new Picker
         {
             Title = "Select Unit",
             FontAttributes = FontAttributes.None,
@@ -235,15 +235,17 @@ namespace ZwypConvertCS1
             Source = ImageSource.FromResource("ZwypConvertCS1.images.right2left.png", typeof(MainPage).GetTypeInfo().Assembly),
             HorizontalOptions = LayoutOptions.Center,
             VerticalOptions = LayoutOptions.Center,
+            Aspect = Aspect.AspectFit,
             conversionName = "Right2Left",
-            Padding = new Thickness(0),
-            Margin = new Thickness(0, 0, 0, 0),
+            //Padding = new Thickness(0),
+            Margin = new Thickness(0, 0, 0, 0)
         };
         public static ZwImageButton btnLeft2Right = new ZwImageButton
         {
             Source = ImageSource.FromResource("ZwypConvertCS1.images.left2right.png", typeof(MainPage).GetTypeInfo().Assembly),
             HorizontalOptions = LayoutOptions.Center,
             VerticalOptions = LayoutOptions.Center,
+            Aspect = Aspect.AspectFit,
             conversionName = "Left2Right",
             Margin = new Thickness(0, 0, 0, 0)
         };
@@ -261,6 +263,8 @@ namespace ZwypConvertCS1
             leftSwipeGesture.Swiped += OnConversionGridSwiped;
             var rightSwipeGesture = new SwipeGestureRecognizer { Direction = SwipeDirection.Right };
             rightSwipeGesture.Swiped += OnConversionGridSwiped;
+            var imageTapGesture = new TapGestureRecognizer { };
+            imageTapGesture.Tapped += OnImageTapped;
 
             Assembly avoidReCalc = typeof(MainPage).GetTypeInfo().Assembly;
             foreach (KonVersionGroup aKVG in TheSet.KonVersionGroups)
@@ -275,7 +279,8 @@ namespace ZwypConvertCS1
                     conversionName = aKVG.myDisplayText,
                     Margin = new Thickness(0, 0, 0, 0)
                 };
-                aGrpButton.Clicked += OnSelectConversion;
+                aGrpButton.GestureRecognizers.Add(imageTapGesture);
+                //aGrpButton.Clicked += OnSelectConversion;
                 aGrpButton.GestureRecognizers.Add(leftSwipeGesture);
                 aGrpButton.GestureRecognizers.Add(rightSwipeGesture);
 
@@ -404,13 +409,17 @@ namespace ZwypConvertCS1
 
             SwipeToConvertGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Auto) });
 
-            btnLeft2Right.Clicked += OnArrowClick;
-            btnRight2Left.Clicked += OnArrowClick;
-
             var leftSwipeGesture = new SwipeGestureRecognizer { Direction = SwipeDirection.Left };
             leftSwipeGesture.Swiped += OnDoConversionSwiped;
             var rightSwipeGesture = new SwipeGestureRecognizer { Direction = SwipeDirection.Right };
             rightSwipeGesture.Swiped += OnDoConversionSwiped;
+            var imageTapGesture = new TapGestureRecognizer { };
+            imageTapGesture.Tapped += OnImageTapped;
+
+            btnLeft2Right.GestureRecognizers.Add(imageTapGesture);
+            //btnLeft2Right.Clicked += OnArrowClick;
+            btnRight2Left.GestureRecognizers.Add(imageTapGesture);
+            //btnRight2Left.Clicked += OnArrowClick;
 
             btnRight2Left.GestureRecognizers.Add(leftSwipeGesture);
             btnLeft2Right.GestureRecognizers.Add(rightSwipeGesture);
@@ -685,6 +694,23 @@ namespace ZwypConvertCS1
                 unitLeftPicker.Items.Add(aKVU.ToString());
                 unitRightPicker.Items.Add(aKVU.ToString());
             }
+        }
+
+        public static void OnImageTapped(object sender, EventArgs e)
+        {
+            // check for whether selecting conversion or selecting direction
+            ZwImageButton tappedButton = (ZwImageButton)sender;
+            if (String.Compare(tappedButton.conversionName, "Left2Right") == 0)
+            {
+                OnArrowClick(sender, e);
+                return;
+            }
+            if (String.Compare(tappedButton.conversionName, "Right2Left") == 0)
+            {
+                OnArrowClick(sender, e);
+                return;
+            }
+            OnSelectConversion(sender, e);
         }
 
         public static void OnConversionGridSwiped(object sender, SwipedEventArgs e)

@@ -86,7 +86,7 @@ namespace ZwypConvertCS1
     }
 
 
-    class ZwImageButton : ImageButton
+    class ZwImageButton : Image     //ImageButton
     {
         public ImageSource normalSource {
             get {
